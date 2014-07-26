@@ -1,0 +1,24 @@
+{
+    "name": "efrane/fosslist",
+    "description": "Helps in listing all FOSS projects and licenses your project depends on.",
+    "authors": [
+        {
+            "name": "Stefan Graupner",
+            "email": "stefan.graupner@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-4": {
+            "EFrane\\Fosslist\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
