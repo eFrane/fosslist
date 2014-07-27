@@ -28,7 +28,9 @@ class FosslistServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		$this->app['fosslist'] = $this->app->share(function($app) {
+			return new Fosslist($app['view']);
+		});
 	}
 
 	/**
