@@ -1,6 +1,5 @@
 <?php namespace EFrane\Fosslist;
 
-use Illuminate\Support\Facades\Cache;
 use Illuminate\View\Factory;
 
 class Fosslist
@@ -16,6 +15,7 @@ class Fosslist
 
   public function getList()
   {
-    return $this->view->make('fosslist::list', ['dependencies' => $this->store])->render();
+    $presenter = new HTMLPresenter($this->view, $this->store);
+    return $presenter->render();   
   }
 }
