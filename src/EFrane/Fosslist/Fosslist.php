@@ -6,15 +6,16 @@ use Illuminate\View\Factory;
 class Fosslist
 {
   protected $view;
+  protected $store;
 
-  public function __construct(\Illuminate\View\Factory $view)
+  public function __construct(\Illuminate\View\Factory $view, DependencyStore $store)
   {
-    $this->view = $view;
+    $this->view  = $view;
+    $this->store = $store;
   }
 
   public function getList()
   {
-    $dependencies = array(['name' => 'foo', 'license' => 'MIT'], ['name' => 'bar', 'license' => '2-Clause BSD']);
-    return $this->view->make('fosslist::list', compact('dependencies'))->render();
+    return $this->view->make('fosslist::list', ['dependencies' => $this->store])->render();
   }
 }

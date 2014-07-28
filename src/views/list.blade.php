@@ -1,9 +1,16 @@
 <div>
-  <ul>
+  <ul class="list-unstyled">
     @foreach ($dependencies as $dependency)
       <li>
-        <span>{{ $dependency['name'] }}</span>
-        <strong>({{ $dependency['license'] }})</strong>
+        <div>
+          <h3 class="page-header">
+            {{ $dependency->name }}
+            <small><strong>({{ $dependency->license }})</strong></small>
+          </h3>
+          <p>
+            {{ $dependency->description }}
+          </p>
+        </div>
       </li>
     @endforeach
   </ul>
