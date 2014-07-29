@@ -17,6 +17,11 @@ class ComposerReader implements Reader
     $this->store = $store;
   }
 
+  public function packagerName()
+  {
+    return "Composer";
+  }
+
   public function read()
   {
     $this->rootPath   = base_path();
@@ -56,7 +61,10 @@ class ComposerReader implements Reader
     $name        = $json->name;
     $version     = (isset($json->version)) ? $json->version : 'unknown';
     $license     = (isset($json->license)) ? $json->license : 'unknown';
-    $description = (isset($json->description)) ? $json->description : '';
+    $description = (isset($json->description)) ? $json->description : null;
+
+    // composer seems to add brackets if multiple licenses are set, that might cause problems
+    $license = str_replace(['(', ')'], '', $license);
 
     $dep = new Dependency($name, $version, $license, $description);
     $this->store->addDependency($dep);

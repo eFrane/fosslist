@@ -6,6 +6,7 @@
  **/
 interface Reader
 {
+  public function packagerName();
   public function read();
   public function checkAvailability();
 }

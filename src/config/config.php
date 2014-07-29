@@ -1,8 +1,12 @@
 <?php return array(
-  'includeSelf' => true,
+  'includeSelf' => false,
   
   'display' => [
     'showUnknownLicense' => false,
     'showUnknownVersion' => true
+  ],
+
+  'readers' => [
+    'composer'
   ]
 );

@@ -8,7 +8,7 @@
             <small><strong>({{ $dependency->license }})</strong></small>
           </h3>
           <p>
-            {{ $dependency->description }}
+            {{ $dependency->description or 'No description available.' }}
           </p>
         </div>
       </li>

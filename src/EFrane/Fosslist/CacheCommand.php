@@ -1,5 +1,7 @@
 <?php namespace EFrane\Fosslist;
 
+use Config;
+
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 
@@ -23,10 +25,17 @@ class CacheCommand extends Command
     if ($this->option('reset'))
       $this->store->reset();
 
-    $reader = new ComposerReader($this->store);
-    $reader->read();
+    $readers = (count($this->option('readers')) > 0) ? explode(',', $this->option('readers'))
+                                                     : Config::get('fosslist::readers');
 
-    $this->line('Done.');
+    foreach ($readers as $readerIdentifier)
+    {
+      $reader = ReaderFactory::createWithIdentifier($readerIdentifier, $this->store);
+      $this->line('Running for '.$reader->packagerName());
+      $reader->read();
+    }
+
+    $this->info('Done.');
   }
 
   public function getOptions()
@@ -36,6 +45,12 @@ class CacheCommand extends Command
       '',
       InputOption::VALUE_NONE,
       'Reset the cache before reading the package lists.'
+    ], [
+      'readers',
+      'r',
+      InputOption::VALUE_OPTIONAL,
+      'Overwrite the list of used package readers.',
+      []
     ]);
   }
 }
