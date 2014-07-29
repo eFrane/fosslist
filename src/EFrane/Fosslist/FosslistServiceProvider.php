@@ -38,7 +38,11 @@ class FosslistServiceProvider extends ServiceProvider {
 			return new CacheCommand($store);
 		});
 
-		$this->commands('fosslist_cache_command');
+		$this->app['fosslist_list_command'] = $this->app->share(function($app) use ($store) {
+			return new ListCommand($app['view'], $store);
+		});
+
+		$this->commands(['fosslist_cache_command', 'fosslist_list_command']);
 	}
 
 	/**
