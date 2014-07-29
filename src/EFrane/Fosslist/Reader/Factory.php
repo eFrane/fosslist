@@ -1,15 +1,17 @@
-<?php namespace EFrane\Fosslist;
+<?php namespace EFrane\Fosslist\Reader;
 
 use Log;
 
-class ReaderFactory
+use EFrane\Fosslist\DependencyStore;
+
+class Factory
 {
   public static function createWithIdentifier($identifier, DependencyStore $store)
   {
     $reader = null;
     try
     {
-      $className = sprintf("EFrane\Fosslist\%sReader", ucfirst(strtolower($identifier)));
+      $className = sprintf("EFrane\Fosslist\Reader\%sReader", ucfirst(strtolower($identifier)));
       $instance = new $className($store);
     } catch (Exception $e)
     {

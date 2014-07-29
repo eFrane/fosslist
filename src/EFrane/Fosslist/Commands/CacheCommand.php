@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 
 use EFrane\Fosslist\DependencyStore;
-use EFrane\Fosslist\ReaderFactory;
+use EFrane\Fosslist\Reader\Factory as ReaderFactory;
 
 class CacheCommand extends Command
 {

@@ -1,4 +1,4 @@
-<?php namespace EFrane\Fosslist;
+<?php namespace EFrane\Fosslist\Reader;
 
 /**
  * Readers define the functionality to read information from a package provider.

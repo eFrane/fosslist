@@ -1,9 +1,12 @@
-<?php namespace EFrane\Fosslist;
+<?php namespace EFrane\Fosslist\Reader;
 
 use \RecursiveDirectoryIterator;
 use \RecursiveIteratorIterator;
 
 use \Config;
+
+use EFrane\Fosslist\DependencyStore;
+use EFrane\Fosslist\Dependency;
 
 class ComposerReader implements Reader
 {
