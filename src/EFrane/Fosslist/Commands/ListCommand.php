@@ -7,8 +7,8 @@ use Symfony\Component\Console\Input\InputOption;
 
 use EFrane\Fosslist\DependencyStore;
 
-use EFrane\Fosslist\TextPresenter;
-use EFrane\Fosslist\JSONPresenter;
+use EFrane\Fosslist\Presenter\TextPresenter;
+use EFrane\Fosslist\Presenter\JSONPresenter;
 
 class ListCommand extends Command
 {

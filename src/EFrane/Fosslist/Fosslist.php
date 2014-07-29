@@ -2,6 +2,8 @@
 
 use Illuminate\View\Factory;
 
+use EFrane\Fosslist\Presenter\HTMLPresenter;
+
 class Fosslist
 {
   protected $view;

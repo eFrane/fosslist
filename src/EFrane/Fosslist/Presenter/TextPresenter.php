@@ -1,6 +1,8 @@
-<?php namespace EFrane\Fosslist;
+<?php namespace EFrane\Fosslist\Presenter;
 
 use Illuminate\View\Factory;
+
+use EFrane\Fosslist\DependencyStore;
 
 class TextPresenter extends BasePresenter
 {

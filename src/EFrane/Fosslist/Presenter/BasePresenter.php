@@ -1,4 +1,6 @@
-<?php namespace EFrane\Fosslist;
+<?php namespace EFrane\Fosslist\Presenter;
+
+use EFrane\Fosslist\DependencyStore;
 
 abstract class BasePresenter
 {
