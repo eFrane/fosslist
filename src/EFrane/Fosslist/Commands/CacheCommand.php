@@ -1,9 +1,12 @@
-<?php namespace EFrane\Fosslist;
+<?php namespace EFrane\Fosslist\Commands;
 
 use Config;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
+
+use EFrane\Fosslist\DependencyStore;
+use EFrane\Fosslist\ReaderFactory;
 
 class CacheCommand extends Command
 {

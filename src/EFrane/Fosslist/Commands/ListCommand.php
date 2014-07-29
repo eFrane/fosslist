@@ -1,9 +1,14 @@
-<?php namespace EFrane\Fosslist;
+<?php namespace EFrane\Fosslist\Commands;
 
 use Illuminate\View\Factory;
 
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
+
+use EFrane\Fosslist\DependencyStore;
+
+use EFrane\Fosslist\TextPresenter;
+use EFrane\Fosslist\JSONPresenter;
 
 class ListCommand extends Command
 {

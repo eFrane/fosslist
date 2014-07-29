@@ -2,6 +2,9 @@
 
 use Illuminate\Support\ServiceProvider;
 
+use EFrane\Fosslist\Commands\CacheCommand;
+use EFrane\Fosslist\Commands\ListCommand;
+
 class FosslistServiceProvider extends ServiceProvider {
 
 	/**
